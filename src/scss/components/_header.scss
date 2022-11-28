@@ -1,0 +1,311 @@
+
+//панель поиска
+.search__block{
+    background:white;
+    height:50px;
+    @include skew_left(50px, white);
+
+
+    //search field
+    .input-group{
+        flex: 1 1 auto;//ведомый блок заполняет свободное пространство
+        input{
+            height:100%;
+            border-left:none;
+        }
+    }
+
+    //Search button
+    .btn-search{
+        @extend .reset-paddings, .regular-element-text-style, .animate_shadow;
+
+        //цвет фона + затемнение при нажатии
+        background-color: var(--main-elem-color);
+        @include animate_darken_background($main-elem-color,.5s);
+
+
+        color:var(--main-text-elem-color);
+
+        display:inline-block;
+        height:100%;
+        padding: 0px 15px;
+        z-index:2;
+
+        flex: 0 0 150px;//фиксированый блок не расширяется и не не сужается
+        overflow:hidden;
+
+        //magnifier
+        .search_image{
+            display:inline-block;
+            width:33px;
+            height:33px;
+            background:url(../images/search.png) no-repeat center center;
+        }
+        .search_text{
+
+        }
+        //наведение курсора
+        &:hover{
+
+            .search_text{
+                text-decoration: underline;
+            }
+            color:var(--main-text-elem-color);
+            cursor: pointer;
+        }
+    }
+
+}
+
+//--кнопка logo
+.logo__block{
+    height:50px;
+
+    //оформление фона + заливка
+    background:linear-gradient(to right,$main-elem-color 50px,orange);
+    @include skew-right(50px,$main-elem-color !important);
+
+
+}
+
+$cat_block_background:lightgray;
+//knopka kategoriii
+.category__block{
+    @include animate_darken_background($cat_block_background,.5s,20%);
+
+    &:hover{
+        cursor:pointer;
+    }
+
+    //для создани уклона нужна фиксированая высота
+    height:50px;
+    line-height:50px;//chtoby rabotala align-middle
+    //оформление фона + заливка
+    background:$cat_block_background;
+    //наклон вправо
+    @include skew-right(50px,$cat_block_background);
+
+    //внутренняя тень для наклонного блока
+    @include left-inner-shadow(10px,#aaaaaa);
+
+    //обертка для текста и бургера категории.
+    .category__block_wrapper{
+        color:black;
+        &:hover{
+            cursor:pointer;
+            color:black;
+            text-decoration:underline;
+        }
+
+    }
+
+    //текст
+    .category-block__text{
+
+    }
+
+    //knopka burgers
+    $line-color:black;// цвет
+
+    .category-block__burger-button{
+
+        .top-nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            color: $line-color;
+            height: 50px;
+            padding: 1em;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu > li {
+            margin: 0 1rem;
+            overflow: hidden;
+        }
+
+        .menu-button-container {
+            display: none;
+            height: 100%;
+            width: 30px;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #menu-toggle {
+            display: none;
+        }
+
+        .menu-button,
+        .menu-button::before,
+        .menu-button::after {
+            display: block;
+            background-color: $line-color;
+            position: absolute;
+            height: 4px;
+            width: 30px;
+            transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+            border-radius: 2px;
+        }
+
+        .menu-button::before {
+            content: '';
+            margin-top: -8px;
+        }
+
+        .menu-button::after {
+            content: '';
+            margin-top: 8px;
+        }
+
+        #menu-toggle:checked + .menu-button-container .menu-button::before {
+            margin-top: 0px;
+            transform: rotate(405deg);
+        }
+
+        #menu-toggle:checked + .menu-button-container .menu-button {
+            background: rgba(255, 255, 255, 0);
+        }
+
+        #menu-toggle:checked + .menu-button-container .menu-button::after {
+            margin-top: 0px;
+            transform: rotate(-405deg);
+        }
+
+
+        .menu-button-container {
+                display: flex;
+            }
+
+        .menu {
+                position: absolute;
+                top: 0;
+                margin-top: 50px;
+                left: 0;
+                flex-direction: column;
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+            }
+
+        #menu-toggle ~ .menu li {
+                height: 0;
+                margin: 0;
+                padding: 0;
+                border: 0;
+                transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+            }
+
+        #menu-toggle:checked ~ .menu li {
+                border: 1px solid #333;
+                height: 2.5em;
+                padding: 0.5em;
+                transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+            }
+
+        .menu > li {
+                display: flex;
+                justify-content: center;
+                margin: 0;
+                padding: 0.5em 0;
+                width: 100%;
+                color: $line-color;
+                background-color: #222;
+            }
+
+        .menu > li:not(:last-child) {
+                border-bottom: 1px solid #444;
+            }
+
+    }
+
+
+
+}
+
+$top_menu_color:$cat_block_background;
+//panel menu
+.top-menu__block{
+    height:50px;
+    line-height:50px;
+
+
+
+    @include skew-left(50px,$top_menu_color);
+    @include right-inner-shadow(10px,#aaaaaa);
+    background-color:$top_menu_color;
+
+    .top-menu__menu{
+        flex-basis: 100%;
+        li{
+          @extend .calibri-bold, .uppercase;
+            padding: 0px 5px;
+            transition:background-color .5s;
+            &:hover{
+                background-color: rgba(255, 255, 255, 0.65);
+            }
+            a{
+                transition: border-bottom .5s;
+                border-bottom: 1px solid transparent;
+                text-decoration:none;
+                color:black;
+                &:hover{
+                    border-color: black;
+                }
+            }
+        }
+    }
+
+    .top-menu__lang{
+        flex-basis: 100%;
+        li{
+            @extend .calibri-bold, .uppercase;
+            padding: 0px 15px;
+            transition:background-color .5s;
+            &:hover{
+                background-color: var(--main-elem-color);
+                @include animate_darken_background($main-elem-color,.5s);
+            }
+            a{
+                transition: color .5s;
+
+                text-decoration:none;
+                color:black;
+                &:hover{
+                    color:white;
+                }
+            }
+        }
+        padding-right:25px;
+    }
+
+    &:after{
+        top:0px;
+    }
+}
+
+//telephones
+.phone-block{
+    a{
+        @extend .aksent-bold;
+        color:$main-elem-color
+    }
+
+}
+
+
+
+
+

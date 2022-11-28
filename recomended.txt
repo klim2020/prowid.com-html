@@ -1,0 +1,7 @@
+			$this->document->addOctScript('catalog/view/theme/oct_remarket/js/jquery-3.6.0.min.js');
+			$this->document->addOctScript('catalog/view/theme/oct_remarket/js/popper.min.js');
+			$this->document->addOctScript('catalog/view/theme/oct_remarket/js/bootstrap.min.js');
+			$this->document->addOctScript('catalog/view/theme/oct_remarket/js/main.js');
+			$this->document->addOctScript('catalog/view/theme/oct_remarket/js/bootstrap-notify/bootstrap-notify.js');
+			//$this->document->addOctScript('catalog/view/theme/oct_remarket/js/lozad.js');
+			$this->document->addOctScript('catalog/view/theme/oct_remarket/js/common.js');

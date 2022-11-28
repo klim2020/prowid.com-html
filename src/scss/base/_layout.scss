@@ -1,0 +1,94 @@
+//стили для лейоута
+//прячем в мобильной версии
+.mobile-hidden{
+  @include mobile_only(){
+    display: none;
+  }
+}
+
+
+//задаем ширину для тестирования, чтобы не рисовать
+.test-width{
+
+}
+
+
+//наклон вправо
+@mixin skew-right($height,$back){
+  position:relative;
+  transform: skew(-45deg,0);
+  z-index:1;
+  @content;
+  >:first-child{
+    margin-left:$height/2;
+  }
+  &>*{
+    transform: skew(45deg,0);
+  }
+  >:last-child{
+    margin-right:-$height/2;
+  }
+  &:before{
+    content:'';
+    width:$height;
+    height:$height;
+    background: $back;
+    /* display: inline-block; */
+    position: absolute;
+    transform:skew(45deg);
+    left:-$height/2;
+    z-index:0;
+  }
+
+}
+
+//наклон влево
+@mixin skew-left($height,$back){
+  position:relative;
+  transform: skew(-45deg,0);
+  z-index:1;
+  @content;
+  >:first-child{
+    margin-left:$height/2;
+  }
+  &>*{
+    transform: skew(45deg,0);
+  }
+  >:last-child{
+    margin-right:-$height/2;
+  }
+  &:after{
+    content:'';
+    width:$height;
+    height:$height;
+    background: $back;
+    /* display: inline-block; */
+    position: absolute;
+    transform:skew(45deg);
+    right:-$height/2;
+    z-index:0;
+  }
+
+}
+
+//внутренняя тень слева
+@mixin left-inner-shadow($px,$color){
+  box-shadow:inset $px $px $px #8c8c8c,
+  inset -1*$px -1*$px $px #8c8c8c;
+  &:before {
+    box-shadow:inset $px $px $px #8c8c8c,
+    inset $px -1*$px $px #8c8c8c;
+  }
+
+}
+
+//внутренняя тень справа
+@mixin right-inner-shadow($px,$color){
+  box-shadow:inset $px $px $px #8c8c8c,
+  inset -1*$px -1*$px $px #8c8c8c;
+  &:after {
+    box-shadow:inset -1*$px $px $px #8c8c8c,
+    inset -1*$px -1*$px $px #8c8c8c;
+  }
+
+}

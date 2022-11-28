@@ -1,0 +1,36 @@
+//для создания анимационныхх элементов
+
+//создание тени при наведении
+$initial-color: #60B044;
+
+.animate_shadow{
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+  transition-property: box-shadow;
+  transition-duration: .5s;
+  transition-timing-function: linear;
+
+  &:hover{
+    //background-color: darken($main-elem-color, 10%);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  }
+}
+
+//затемнение бэкграунда
+@mixin animate_darken_background($color, $time, $prc:10%){
+    background-color:$color;
+    transition: background-color $time ease-in;
+    &:before{
+      transition: background-color $time ease-in;
+    }
+    &:hover{
+      background-color: darken($color, $prc);
+      &::before {
+        background-color: darken($color, $prc);
+      }
+    }
+
+
+
+
+
+}
