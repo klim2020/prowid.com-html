@@ -12,6 +12,7 @@ module.exports = {
       jquery: path.resolve(__dirname, '../node_modules/jquery/dist/jquery.min.js'),
       bootstrapjs: path.resolve(__dirname, '../node_modules/bootstrap/dist/js/bootstrap.min.js'),
       bootstrapbundlejs: path.resolve(__dirname, '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'),
+      slickjs: path.resolve(__dirname, '../src/vendor/slick/slick.min.js'),
       //swiperjs: path.resolve(__dirname, '../node_modules/swiper/swiper-bundle.min.js'),
      // jqValidate:path.resolve(__dirname, '../node_modules/jq-bootstrap-validation/dist/jq.bootstrap.validation.min.js'),
       //jqInput:path.resolve(__dirname, '../node_modules/inputmask/dist/jquery.inputmask.min.js'),
@@ -19,6 +20,7 @@ module.exports = {
      // isotope:path.resolve(__dirname, '../node_modules/isotope-layout/dist/isotope.pkgd.min.js'),
     },
     vendorListCss: {
+      slickcss:path.resolve(__dirname, '../src/vendor/slick/slick.min.css'),
       //swipercss: path.resolve(__dirname, '../node_modules/swiper/swiper-bundle.min.css'),
       bootstrap: path.resolve(__dirname, '../node_modules/bootstrap/dist/css/bootstrap.min.css'),
       animatecss: path.resolve(__dirname, '../node_modules/animate.css/animate.min.css'),

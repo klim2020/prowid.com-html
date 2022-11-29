@@ -6,7 +6,7 @@ const webpackConfiguration = require('../webpack.config');
 
 const path = require("path");
 const glob = require("glob");
-const PurgeCSSPlugin = require("purgecss-webpack-plugin");
+
 
 const ALL_FILES = glob.sync(path.join(__dirname, "src/*.js"));
 
