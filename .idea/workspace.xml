@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7ee41c6-ea21-4b10-bd15-94f5676a4bc1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/images/cart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/like.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/person.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/arrow-left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/arrow-right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/banner.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/jq-bootstrap-validation/node_modules/jQuery/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/jq-bootstrap-validation/node_modules/jQuery/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/elems.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/elems.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_header.scss" afterDir="false" />
     </list>
@@ -42,28 +41,28 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "HOTFIX_customHotfixCommitMessage_text": "Tagging hotfix %name%",
-    "RELEASE_customTagCommitMessage_text": "Tagging version %name%",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
-    "WebServerToolWindowPanel.toolwindow.show.date": "false",
-    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
-    "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "last_opened_file_path": "/home/klim/hdd/user/PhpstormProjects/prowid.com-html/src",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "gitflow.GitflowConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;HOTFIX_customHotfixCommitMessage_text&quot;: &quot;Tagging hotfix %name%&quot;,
+    &quot;RELEASE_customTagCommitMessage_text&quot;: &quot;Tagging version %name%&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/klim/hdd/user/PhpstormProjects/prowid.com-html/src&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;gitflow.GitflowConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -91,7 +90,7 @@
       <workItem from="1669596994583" duration="7652000" />
       <workItem from="1669636608644" duration="506000" />
       <workItem from="1669652284861" duration="678000" />
-      <workItem from="1669675320791" duration="610000" />
+      <workItem from="1669675320791" duration="4732000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1669637809203</created>
@@ -114,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669675394169</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="init">
+      <created>1669675942330</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669675942330</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
