@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7ee41c6-ea21-4b10-bd15-94f5676a4bc1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/vendor/css/slick.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vendor/slick.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vendor/slick/fonts/slick.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vendor/slick/fonts/slick.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vendor/slick/fonts/slick.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vendor/slick/fonts/slick.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vendor/slick/slick.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vendor/slick/slick.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration/environment.js" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/environment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configuration/webpack.prod.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/configuration/webpack.prod.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elems.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/elems.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/blocks/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/blocks/header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_header.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669675942330</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="init">
+      <created>1669717277128</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669717277128</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

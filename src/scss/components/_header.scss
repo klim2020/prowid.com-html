@@ -369,11 +369,11 @@ $top_menu_color:$cat_block_background;
     height:50px;
     background:linear-gradient(to right,#fbe433,#ef5637);
     &.slider__arrow_left{
-        left:0px;
+        left:-25px;
         z-index:2;
     }
     &.slider__arrow_right{
-        right:0px;
+        right:-25px;
     }
 }
 
