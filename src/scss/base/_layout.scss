@@ -13,71 +13,102 @@
 }
 
 
-//наклон вправо
-@mixin skew-right($height,$back){
+
+//наклон справа
+@mixin skew-right($height,$back:false){
   position:relative;
-  transform: skew(-45deg,0);
-  z-index:1;
+
   @content;
-  >:first-child{
-    margin-left:$height/2;
-  }
-  &>*{
-    transform: skew(45deg,0);
-  }
-  >:last-child{
-    margin-right:-$height/2;
-  }
+
   &:before{
     content:'';
-    width:$height;
+    width:50%;
     height:$height;
-    background: $back;
-    /* display: inline-block; */
+    @if $back !=false {
+      background: $back !important;
+    }
     position: absolute;
-    transform:skew(45deg);
-    left:-$height/2;
+    left:0px;
     z-index:0;
+  }
+
+  &:after{
+    content:'';
+    width:70%;
+    height:$height;
+    @if $back != false {
+      background: $back !important;
+    }
+    position: absolute;
+    right:0px;
+    top:0px;
+    z-index:1;
+    transform: skew(-45deg);
+  }
+
+  &>*{
+    position:relative;
+    z-index:3;
+    //transform: skew(45deg,0);
   }
 
 }
 
-//наклон влево
+//наклон cлевa
 @mixin skew-left($height,$back){
+
   position:relative;
-  transform: skew(-45deg,0);
-  z-index:1;
-  @content;
-  >:first-child{
-    margin-left:$height/2;
-  }
-  &>*{
-    transform: skew(45deg,0);
-  }
-  >:last-child{
-    margin-right:-$height/2;
-  }
-  &:after{
-    content:'';
-    width:$height;
-    height:$height;
-    background: $back;
-    /* display: inline-block; */
+
+  &:before{
+    content: '';
+    transform:skew(-45deg);
+    height:50px;
+    background:$back;
     position: absolute;
-    transform:skew(45deg);
-    right:-$height/2;
-    z-index:0;
+    width: 70%;
+    left:10px;
+    z-index:1;
   }
+
+  &:after{
+    content: '';
+    width:70%;
+    height:50px;
+    background:$back;
+    right: 0px;
+    position: absolute;
+    z-index:2;
+  }
+
+  //transform: skew(-45deg,0);
+
+  >:first-child{
+    margin-left: $height;
+  }
+
+  &>*{
+    position:relative;
+    z-index:3;
+    //transform: skew(45deg,0);
+  }
+
+  >:last-child{
+    //margin-right:-$height/2;
+  }
+
 
 }
 
 //внутренняя тень слева
 @mixin left-inner-shadow($px,$color){
-  box-shadow:inset $px $px $px #8c8c8c,
-  inset -1*$px -1*$px $px #8c8c8c;
+  &:after{
+    box-shadow:inset -1*$px $px $px $color,
+    inset -1*$px -1*$px $px $color;
+  }
+
   &:before {
-    box-shadow:inset $px $px $px #8c8c8c,
-    inset $px -1*$px $px #8c8c8c;
+    box-shadow:inset $px $px $px $color,
+    inset $px -1*$px $px $color;
   }
 
 }
@@ -91,4 +122,28 @@
     inset -1*$px -1*$px $px #8c8c8c;
   }
 
+}
+
+
+
+//контроллирует отступ слева
+.left-margin-container{
+    @media (min-width:1380px){
+      margin-left:50px;
+    }
+    margin-left:0px;
+}
+//контроллирует отступ справа
+.right-margin-container{
+  @media (min-width:1380px){
+    margin-right:50px;
+  }
+  margin-right:0px;
+}
+
+.padding-container{
+  padding: 0px 0px;
+  @media (min-width:1380px){
+    padding: 0px 50px;
+  }
 }

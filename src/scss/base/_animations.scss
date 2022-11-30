@@ -17,15 +17,21 @@ $initial-color: #60B044;
 
 //затемнение бэкграунда
 @mixin animate_darken_background($color, $time, $prc:10%){
-    background-color:$color;
+    //background-color:$color;
     transition: background-color $time ease-in;
     &:before{
       transition: background-color $time ease-in;
     }
+    &:after{
+      transition: background-color $time ease-in;
+    }
     &:hover{
-      background-color: darken($color, $prc);
+
       &::before {
-        background-color: darken($color, $prc);
+        background-color: darken($color, $prc) !important;
+      }
+      &::after {
+        background-color: darken($color, $prc) !important;
       }
     }
 

@@ -1,195 +1,252 @@
+//верхняя полоса
+.header__top{
+    height:90px;
+    width:100%;
+    background-color:white;
+    border-bottom: 3px solid lightgray;
+    .header__top_left{
+        flex:1 1 45%;
 
-//панель поиска
-.search__block{
-    background:white;
-    height:50px;
-    @include skew_left(50px, white);
+        height:90px;
 
-
-    //search field
-    .input-group{
-        flex: 1 1 auto;//ведомый блок заполняет свободное пространство
-        input{
-            height:100%;
-            border-left:none;
-        }
-    }
-
-    //Search button
-    .btn-search{
-        @extend .reset-paddings, .regular-element-text-style, .animate_shadow;
-
-        //цвет фона + затемнение при нажатии
-        background-color: var(--main-elem-color);
-        @include animate_darken_background($main-elem-color,.5s);
-
-
-        color:var(--main-text-elem-color);
-
-        display:inline-block;
-        height:100%;
-        padding: 0px 15px;
-        z-index:2;
-
-        flex: 0 0 150px;//фиксированый блок не расширяется и не не сужается
-        overflow:hidden;
-
-        //magnifier
-        .search_image{
-            display:inline-block;
-            width:33px;
-            height:33px;
-            background:url(../images/search.png) no-repeat center center;
-        }
-        .search_text{
-
-        }
-        //наведение курсора
-        &:hover{
-
-            .search_text{
-                text-decoration: underline;
+        //оформление фона + заливка + скос
+        //background:linear-gradient(to right,$main-elem-color 70%,orange);
+        //скос справа
+        @include skew-right(90px){
+            &:before{
+                background:$main-elem-color !important;
             }
-            color:var(--main-text-elem-color);
-            cursor: pointer;
+            &:after{
+                background:linear-gradient(to right,$main-elem-color 70%,orange) !important;
+            }
+        };
+        h1{
+            font-size:26pt;
+            color:white;
+            vertical-align: middle;
         }
     }
 
-}
+    .header__top_right{
+        flex:1 1 55%;
+        height:100%;
+        background-color:white;
+//правый блок с меню
+        .top-right__menu-block{
+            flex: 1 1 auto;
+            height:50px;
+            line-height:50px;
+            //слева скос
+            @include skew-left(50px,$top_menu_color);
+            //внутреняя градиентная тень для скоса слева
+            @include left-inner-shadow(10px,#8c8c8c);
 
-//--кнопка logo
-.logo__block{
-    height:50px;
+            .top-menu__menu{
+                flex-basis: 100%;
+                li{
+                    @extend .calibri-bold, .uppercase;
+                    padding: 0px 5px;
+                    transition:background-color .5s;
+                    &:hover{
+                        background-color: rgba(255, 255, 255, 0.65);
+                    }
+                    a{
+                        transition: border-bottom .5s;
+                        border-bottom: 1px solid transparent;
+                        text-decoration:none;
+                        color:black;
+                        &:hover{
+                            border-color: black;
+                        }
+                    }
+                }
+            }
 
-    //оформление фона + заливка
-    background:linear-gradient(to right,$main-elem-color 50px,orange);
-    @include skew-right(50px,$main-elem-color !important);
+            .top-menu__lang{
+                flex-basis: 100%;
+                li{
+                    @extend .calibri-bold, .uppercase;
+                    padding: 0px 15px;
+                    transition:background-color .5s;
+                    &:hover{
+                        background-color: var(--main-elem-color);
+                        @include animate_darken_background($main-elem-color,.5s);
+                        cursor:pointer;
+                        a {
+                            text-decoration:none;
+                            color:white;
+                        }
+                    }
+                    a{
+                        transition: color .5s;
+                        text-decoration:none;
+                        color:black;
+                        &:hover{
+                            color:white;
+                        }
+                    }
+                }
 
+            }
 
-}
+        }
 
-$cat_block_background:lightgray;
-//knopka kategoriii
-.category__block{
-    @include animate_darken_background($cat_block_background,.5s,20%);
-
-    &:hover{
-        cursor:pointer;
     }
 
-    //для создани уклона нужна фиксированая высота
-    height:50px;
-    line-height:50px;//chtoby rabotala align-middle
-    //оформление фона + заливка
-    background:$cat_block_background;
-    //наклон вправо
-    @include skew-right(50px,$cat_block_background);
+}
 
-    //внутренняя тень для наклонного блока
-    @include left-inner-shadow(10px,#aaaaaa);
+//средняя полоса
+.header__middle{
+    height: 100px;
+    background-color:white;
+}
+.header__middle_tel{
+    min-width:250px;
+}
+.header__middle_callback{
 
-    //обертка для текста и бургера категории.
-    .category__block_wrapper{
-        color:black;
+    min-width:300px;
+    button{
+        width:100%;
+    }
+}
+
+//нижняя полоса
+.header__bottom{
+
+    height: 90px;
+    background-color:#f9e133;
+
+    .category__block{
+        min-width:300px;
+    }
+
+    .category__block{
+        //@include animate_darken_background($cat_block_background,.5s,20%);
+
         &:hover{
             cursor:pointer;
+        }
+
+        //для создани уклона нужна фиксированая высота
+        height:50px;
+        line-height:50px;//chtoby rabotala align-middle
+        //оформление фона + заливка
+
+        //наклон вправо
+        @include skew-right(50px,$cat_block_background){
+
+            //внутренняя тень для наклонного блока
+            @include left-inner-shadow(10px,#aaaaaa);
+
+            //затемнение фона при наведении
+            @include animate_darken_background($cat_block_background,.5s,20%);
+        };
+
+
+
+        //обертка для текста и бургера категории.
+        .category__block_wrapper{
             color:black;
-            text-decoration:underline;
+            &:hover{
+                cursor:pointer;
+                color:black;
+                text-decoration:underline;
+            }
+
         }
 
-    }
+        //текст
+        .category-block__text{
 
-    //текст
-    .category-block__text{
-
-    }
-
-    //knopka burgers
-    $line-color:black;// цвет
-
-    .category-block__burger-button{
-
-        .top-nav {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-
-            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            color: $line-color;
-            height: 50px;
-            padding: 1em;
         }
 
-        .menu {
-            display: flex;
-            flex-direction: row;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
+        //knopka burgers
+        $line-color:black;// цвет
 
-        .menu > li {
-            margin: 0 1rem;
-            overflow: hidden;
-        }
+        .category-block__burger-button{
 
-        .menu-button-container {
-            display: none;
-            height: 100%;
-            width: 30px;
-            cursor: pointer;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+            .top-nav {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
 
-        #menu-toggle {
-            display: none;
-        }
+                /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                color: $line-color;
+                height: 50px;
+                padding: 1em;
+            }
 
-        .menu-button,
-        .menu-button::before,
-        .menu-button::after {
-            display: block;
-            background-color: $line-color;
-            position: absolute;
-            height: 4px;
-            width: 30px;
-            transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
-            border-radius: 2px;
-        }
+            .menu {
+                display: flex;
+                flex-direction: row;
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
 
-        .menu-button::before {
-            content: '';
-            margin-top: -8px;
-        }
+            .menu > li {
+                margin: 0 1rem;
+                overflow: hidden;
+            }
 
-        .menu-button::after {
-            content: '';
-            margin-top: 8px;
-        }
+            .menu-button-container {
+                display: none;
+                height: 100%;
+                width: 30px;
+                cursor: pointer;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
 
-        #menu-toggle:checked + .menu-button-container .menu-button::before {
-            margin-top: 0px;
-            transform: rotate(405deg);
-        }
+            #menu-toggle {
+                display: none;
+            }
 
-        #menu-toggle:checked + .menu-button-container .menu-button {
-            background: rgba(255, 255, 255, 0);
-        }
+            .menu-button,
+            .menu-button::before,
+            .menu-button::after {
+                display: block;
+                background-color: $line-color;
+                position: absolute;
+                height: 4px;
+                width: 30px;
+                transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+                border-radius: 2px;
+            }
 
-        #menu-toggle:checked + .menu-button-container .menu-button::after {
-            margin-top: 0px;
-            transform: rotate(-405deg);
-        }
+            .menu-button::before {
+                content: '';
+                margin-top: -8px;
+            }
+
+            .menu-button::after {
+                content: '';
+                margin-top: 8px;
+            }
+
+            #menu-toggle:checked + .menu-button-container .menu-button::before {
+                margin-top: 0px;
+                transform: rotate(405deg);
+            }
+
+            #menu-toggle:checked + .menu-button-container .menu-button {
+                background: rgba(255, 255, 255, 0);
+            }
+
+            #menu-toggle:checked + .menu-button-container .menu-button::after {
+                margin-top: 0px;
+                transform: rotate(-405deg);
+            }
 
 
-        .menu-button-container {
+            .menu-button-container {
                 display: flex;
             }
 
-        .menu {
+            .menu {
                 position: absolute;
                 top: 0;
                 margin-top: 50px;
@@ -200,7 +257,7 @@ $cat_block_background:lightgray;
                 align-items: center;
             }
 
-        #menu-toggle ~ .menu li {
+            #menu-toggle ~ .menu li {
                 height: 0;
                 margin: 0;
                 padding: 0;
@@ -208,14 +265,14 @@ $cat_block_background:lightgray;
                 transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
             }
 
-        #menu-toggle:checked ~ .menu li {
+            #menu-toggle:checked ~ .menu li {
                 border: 1px solid #333;
                 height: 2.5em;
                 padding: 0.5em;
                 transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
             }
 
-        .menu > li {
+            .menu > li {
                 display: flex;
                 justify-content: center;
                 margin: 0;
@@ -225,213 +282,82 @@ $cat_block_background:lightgray;
                 background-color: #222;
             }
 
-        .menu > li:not(:last-child) {
+            .menu > li:not(:last-child) {
                 border-bottom: 1px solid #444;
             }
 
+        }
+
+
+
     }
 
+    .header-bottom__search{
+        flex: 1 1 auto;
+    }
+
+    .search__block{
+
+        height:50px;
+        @include skew_left(50px, white);
 
 
-}
-
-$top_menu_color:$cat_block_background;
-//panel menu
-.top-menu__block{
-    height:50px;
-    line-height:50px;
-
-
-
-    @include skew-left(50px,$top_menu_color);
-    @include right-inner-shadow(10px,#aaaaaa);
-    background-color:$top_menu_color;
-
-    .top-menu__menu{
-        flex-basis: 100%;
-        li{
-          @extend .calibri-bold, .uppercase;
-            padding: 0px 5px;
-            transition:background-color .5s;
-            &:hover{
-                background-color: rgba(255, 255, 255, 0.65);
-            }
-            a{
-                transition: border-bottom .5s;
-                border-bottom: 1px solid transparent;
-                text-decoration:none;
-                color:black;
-                &:hover{
-                    border-color: black;
-                }
+        //search field
+        .input-group{
+            flex: 1 1 auto;//ведомый блок заполняет свободное пространство
+            input{
+                height:100%;
+                border-left:none;
             }
         }
-    }
 
-    .top-menu__lang{
-        flex-basis: 100%;
-        li{
-            @extend .calibri-bold, .uppercase;
+        //Search button
+        .btn-search{
+            @extend .reset-paddings, .regular-element-text-style, .animate_shadow;
+
+            //цвет фона + затемнение при нажатии
+            background-color: var(--main-elem-color);
+            @include animate_darken_background($main-elem-color,.5s);
+
+
+            color:var(--main-text-elem-color);
+
+            display:inline-block;
+            height:100%;
             padding: 0px 15px;
-            transition:background-color .5s;
+
+
+            flex: 0 0 150px;//фиксированый блок не расширяется и не не сужается
+            overflow:hidden;
+
+            //magnifier
+            .search_image{
+                display:inline-block;
+                width:33px;
+                height:33px;
+                background:url(../images/search.png) no-repeat center center;
+            }
+            .search_text{
+
+            }
+            //наведение курсора
             &:hover{
-                background-color: var(--main-elem-color);
-                @include animate_darken_background($main-elem-color,.5s);
-                cursor:pointer;
-                a {
-                    text-decoration:none;
-                    color:white;
+
+                .search_text{
+                    text-decoration: underline;
                 }
-            }
-            a{
-                transition: color .5s;
-                text-decoration:none;
-                color:black;
-                &:hover{
-                    color:white;
-                }
+                color:var(--main-text-elem-color);
+                cursor: pointer;
             }
         }
-        padding-right:25px;
-    }
 
-    &:after{
-        top:0px;
-    }
-}
-
-//telephones
-.phone-block{
-    a{
-        @extend .aksent-bold;
-        color:$main-elem-color
     }
 
 }
-
-//callbacks
-.btn-callback{
-    background:white;
-    height:55px;
-    border:3px solid $main-elem-color;
-    &:hover{
-        background-color:lightgrey;
-        @include animate_darken_background(lightgrey,.5s);
+//
+.header__banner-block{
+    .header_slider{
+        margin: 0 auto;
+        width:calc(100% - 50px);
     }
 }
-
-.btn-callback2{
-    background:white;
-    height:55px;
-    border:3px solid $main-elem-color;
-    &:hover{
-        background-color:$main-elem-color;
-        @include animate_darken_background($main-elem-color,.5s);
-        color:white;
-
-    }
-}
-
-
-.yellow__stripe{
-    height: 85px;
-    background-color: #f9e133;
-}
-
-
-.btn-select {
-    background: none;
-    border: none;
-    &:hover{
-        img{
-            filter: invert(43%) sepia(72%) saturate(2530%) hue-rotate(340deg) brightness(104%) contrast(103%);
-        }
-        span{
-            color: $main-elem-color;
-        }
-    }
-    img{
-        height: 36px;
-        width: 36px;
-        transition-property: filter;
-        transition-duration: 0.3s;
-        transition-timing-function: linear;
-    }
-    span{
-        transition-property: color;
-        transition-duration: 0.3s;
-        transition-timing-function: linear;
-    }
-}
-
-.slider__arrow{
-    width:50px;
-    height:50px;
-    background:linear-gradient(to right,#fbe433,#ef5637);
-    &.slider__arrow_left{
-        left:-25px;
-        z-index:2;
-    }
-    &.slider__arrow_right{
-        right:-25px;
-    }
-}
-
-
-
-//точечки слайдера
-.slider__dot{
-    display:inline-flex;
-    flex-direction: row;
-
-    position:absolute;
-    bottom: 0px;
-    left: 50%;
-
-    >*{
-        margin-left:10px;
-    }
-    li{
-        button{
-            height:20px;
-            width:20px;
-            border:2px solid $main-elem-color;
-            border-radius:50%;
-            font-size: 0;
-            background:none;
-        }
-    }
-    /*safelist*/
-    .slick-active{
-        button {
-            background: $main-elem-color !important;
-        }
-    }
-    &.selected{
-        background-color:$main-elem-color;
-    }
-}
-
-.slick-arrow{
-    position: absolute;
-    top:50%;
-    &.slick-prev{
-        left:0px;
-        z-index:2;
-    }
-    &.slick-next{
-        right:0px;
-    }
-}
-
-
-
-.slider__arrow_left{
-
-}
-
-
-.slider__arrow_right{
-
-}
-

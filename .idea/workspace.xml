@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7ee41c6-ea21-4b10-bd15-94f5676a4bc1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scss/components/elems.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elems.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/elems.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/aksent.eot" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonts/aksent.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/aksent.otf" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonts/aksent.otf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/aksent.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonts/aksent.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/aksent.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonts/aksent.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fonts/aksent.woff" beforeDir="false" afterPath="$PROJECT_DIR$/src/fonts/aksent.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/location.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/location.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/base/_animations.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/base/_animations.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/base/_layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/base/_layout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/components/_bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_bootstrap.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/components/_header.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,6 +99,9 @@
       <workItem from="1669636608644" duration="506000" />
       <workItem from="1669652284861" duration="678000" />
       <workItem from="1669675320791" duration="4732000" />
+      <workItem from="1669720452414" duration="13541000" />
+      <workItem from="1669757117894" duration="7723000" />
+      <workItem from="1669766132054" duration="6708000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1669637809203</created>
@@ -123,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669717277128</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="init">
+      <created>1669717669814</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669717669814</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
