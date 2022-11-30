@@ -62,7 +62,7 @@
   &:before{
     content: '';
     transform:skew(-45deg);
-    height:50px;
+    height:$height;
     background:$back;
     position: absolute;
     width: 70%;
@@ -73,7 +73,7 @@
   &:after{
     content: '';
     width:70%;
-    height:50px;
+    height:$height;
     background:$back;
     right: 0px;
     position: absolute;

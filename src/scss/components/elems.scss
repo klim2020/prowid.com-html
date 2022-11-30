@@ -121,6 +121,7 @@ $top_menu_color:$cat_block_background;
     }
     span{
       color: $main-elem-color;
+
     }
   }
   img{
@@ -131,6 +132,9 @@ $top_menu_color:$cat_block_background;
     transition-timing-function: linear;
   }
   span{
+    @include media-breakpoint-down(lg){
+      display:none;
+    }
     transition-property: color;
     transition-duration: 0.3s;
     transition-timing-function: linear;

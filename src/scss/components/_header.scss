@@ -1,18 +1,23 @@
 //верхняя полоса
+
+
+$hgt:60px;
 .header__top{
-    height:90px;
+    height:$hgt;
     width:100%;
     background-color:white;
     border-bottom: 3px solid lightgray;
-    .header__top_left{
-        flex:1 1 45%;
 
-        height:90px;
+
+    .header__top_left{
+        flex:1 1 450px;
+
+        height:$hgt;
 
         //оформление фона + заливка + скос
         //background:linear-gradient(to right,$main-elem-color 70%,orange);
         //скос справа
-        @include skew-right(90px){
+        @include skew-right($hgt){
             &:before{
                 background:$main-elem-color !important;
             }
@@ -21,25 +26,25 @@
             }
         };
         h1{
-            font-size:26pt;
+            font-size:1.5rem;
             color:white;
             vertical-align: middle;
         }
     }
 
     .header__top_right{
-        flex:1 1 55%;
+        flex:1 1 70%;
         height:100%;
         background-color:white;
 //правый блок с меню
         .top-right__menu-block{
             flex: 1 1 auto;
-            height:50px;
-            line-height:50px;
+            height:30px;
+            line-height:30px;
             //слева скос
-            @include skew-left(50px,$top_menu_color);
+            @include skew-left(30px,$top_menu_color);
             //внутреняя градиентная тень для скоса слева
-            @include left-inner-shadow(10px,#8c8c8c);
+            @include left-inner-shadow(5px,#8c8c8c);
 
             .top-menu__menu{
                 flex-basis: 100%;
@@ -93,6 +98,8 @@
 
     }
 
+
+
 }
 
 //средняя полоса
@@ -101,7 +108,7 @@
     background-color:white;
 }
 .header__middle_tel{
-    min-width:250px;
+    min-width:200px;
 }
 .header__middle_callback{
 
@@ -111,6 +118,10 @@
     }
 }
 
+.header__middle_center{
+    flex: 1 1 auto;
+}
+
 //нижняя полоса
 .header__bottom{
 
@@ -118,7 +129,7 @@
     background-color:#f9e133;
 
     .category__block{
-        min-width:300px;
+        min-width:250px;
     }
 
     .category__block{
@@ -327,7 +338,7 @@
             padding: 0px 15px;
 
 
-            flex: 0 0 150px;//фиксированый блок не расширяется и не не сужается
+            flex: 0 0 200px;//фиксированый блок не расширяется и не не сужается
             overflow:hidden;
 
             //magnifier
@@ -354,7 +365,9 @@
     }
 
 }
-//
+
+
+//баннер
 .header__banner-block{
     background:white;
     .header_slider{
